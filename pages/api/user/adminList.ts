@@ -1,0 +1,41 @@
+import { NextApiRequest, NextApiResponse } from "next";
+import absoluteUrl from "next-absolute-url"
+import { APIUrl } from "../../../config/config";
+import dbConnect from "../../../lib/dbConnect";
+
+type ResponseData = {
+    error: string,
+    message: string,
+    page: number,
+    startFrom: number,
+    perPage: number,
+}
+
+export default async function getPosts(req: NextApiRequest, res: NextApiResponse) {
+
+    if (req.method === "GET") {
+        try {
+            const perPage = 10;
+            const page: any = req.query.page;
+            const startFrom = (page - 1) * perPage;
+
+            const totalUser = await dbConnect.select("*").from("jp_admin_user");
+            const totalRecords = totalUser.length;
+            const userList = await dbConnect.raw(`SELECT * FROM jp_admin_user ORDER BY user_id ASC OFFSET ${startFrom} LIMIT ${10}`);
+            const totalPages = Math.ceil(totalRecords / perPage);
+
+            res.status(201).json({
+                status: true,
+                users: userList.rows,
+                currentPage: page,
+                totalPages: totalPages,
+            })
+        } catch (err) {
+            console.log(err)
+            res.status(500).send("error")
+        }
+    } else {
+        res.status(405).json({ messagge: "Method not allowed" })
+    }
+
+}

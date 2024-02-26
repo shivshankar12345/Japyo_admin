@@ -1,0 +1,53 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "type-check": "tsc"
+  },
+  "dependencies": {
+    "@headlessui/react": "^1.7.4",
+    "@types/bcryptjs": "^2.4.2",
+    "@types/js-cookie": "^3.0.2",
+    "@types/jsonwebtoken": "^8.5.9",
+    "axios": "^1.1.2",
+    "bcrypt": "^5.1.0",
+    "bcryptjs": "^2.4.3",
+    "echarts-for-react": "^3.0.2",
+    "flowbite": "^1.5.3",
+    "flowbite-react": "^0.3.4",
+    "form-data": "^4.0.0",
+    "js-cookie": "^3.0.1",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^2.3.0",
+    "moment": "^2.29.4",
+    "next": "latest",
+    "next-absolute-url": "^1.2.2",
+    "next-auth": "^4.12.3",
+    "next-session": "^4.0.5",
+    "next-themes": "^0.2.1",
+    "nextjs-progressbar": "^0.0.16",
+    "nookies": "^2.5.2",
+    "pg": "^8.8.0",
+    "react": "^18.2.0",
+    "react-addons-shallow-compare": "^15.6.3",
+    "react-datepicker": "^4.8.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.6.0",
+    "react-loading-skeleton": "^3.1.0",
+    "react-toastify": "^9.0.8"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.7",
+    "@types/node": "^12.12.21",
+    "@types/pg": "^8.6.5",
+    "@types/react": "18.0.25",
+    "@types/react-datepicker": "^4.8.0",
+    "autoprefixer": "^10.4.12",
+    "postcss": "^8.4.17",
+    "tailwind-scrollbar": "^2.0.1",
+    "tailwindcss": "^3.1.8",
+    "typescript": "^4.8.3"
+  }
+}
